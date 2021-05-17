@@ -166,6 +166,8 @@ title.addEventListener("click", handleClick);
 
 console.dir(document);
 */
+
+/*
 const title = document.querySelector("#title");
 
 function handleResize() {
@@ -180,19 +182,78 @@ window.addEventListener("resize", handleResize);
 
 title.addEventListener("click", handleClick);
 
+*/
+
 /*
 const title = document.querySelector("#title");
+*/
 
-const BASE_COLOR="rgb(52, 73, 94)";
+// == 연산자는 두 변수의 '값' 만을 비교하고, === 연산자는 값과 자료형 모두 비교한다!(좀 더 엄격하달까?)
+
+// and = &&    / or = ||
+
+/*
+if (10 === 5) {
+  console.log("Hi!");
+} else if ("10" === "10") {
+  console.log("lalalalal");
+} else {
+  console.log("Ho!");
+}
+*/
+
+/*
+if (20 > 5 && "nicolas" === "nicolas") {
+  console.log("True");
+} else {
+  console.log("False!");
+}
+*/
+
+/*
+const BASE_COLOR = "rgb(52, 73, 94)";
+const OTHER_COLOR = "#7f8c8d";
 
 function handleClick() {
-    console.log(title.style.color);
+  const currentColor = title.style.color;
+  if (currentColor === BASE_COLOR) {
+    title.style.color = OTHER_COLOR;
+  } else {
+    title.style.color = BASE_COLOR;
+  }
 }
 
 function init() {
-    title.style.color = BASE_COLOR;
-    title.addEventListener("click", handleClick);
+  title.style.color = BASE_COLOR;
+  title.addEventListener("mouseenter", handleClick);
 }
 
 init();
+
+function handleOffline() {
+  console.log("Bye Bye");
+}
+
+function handleOnline() {
+  console.log("Welcome Back !!");
+}
+
+window.addEventListener("offline", handleOffline);
+window.addEventListener("online", handleOnline);
+*/
+
+/*
+const title = document.querySelector("#title");
+
+const CLICKED_CLASS = "clicked";
+
+function handleClick() {
+  title.classList.toggle(CLICKED_CLASS);
+}
+
+function init() {
+  title.addEventListener("click", handleClick);
+}
+init();
+
 */
