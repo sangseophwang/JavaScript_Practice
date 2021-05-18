@@ -41,3 +41,13 @@ function init() {
 }
 
 init();
+
+/* 헤설 :
+
+  우선 이름을 입력할 수 있는 <form>, <input> 태그를 만들고 따로 <h4> 태그를 만든다. 그리고 각각 form, input, greeting 으로 지칭한다.
+  그리고 css 를 통해 form과 input 을 숨기고 showing 이라는 클래스가 생기면 그 때 보이도록 설정한다. 
+  APLICATION_KEY_NAME 이 없으면 showing 클래스를 form 에 붙여서 질문 칸이 나오도록 하고, 입력한 값이 localStorage에 저장이 돼서 
+  APLICATION_KEY_NAME과 그 값이 생기면 질문 칸이 사라지고 'Hello ${text}' 가 나오도록 한다.
+
+
+*/
