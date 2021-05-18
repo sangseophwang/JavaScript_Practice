@@ -4,7 +4,25 @@ const toDoForm = document.querySelector(".js-toDoForm"),
 
 const TODOS_LS = "toDos";
 
+/*
+
+    toDos 가 let 인 이유:
+        delBtn 으로 지우거나 input으로 추가를 하게 됐을 때 const로 하면 변하지 못하기 때문에 가변적인 let 을 사용한 것이다.
+
+*/
+
 let toDos = [];
+
+/* deleteToDo(event) 해석
+
+    delBtn 을 클릭했을 때 이벤트가 발생하도록 설정했으므로, 클릭을 하면
+    1. event.target 으로 어떤 버튼이 눌렸는지 확인하고
+    2. li 로 그 버튼의 부모 태그 (<li>)가 뭔지 파악한다. (<li>태그에 id가 있기 때문에!)
+    3. 그래서 .removeChild 로 해당 <li> 태그를 지우도록 한다.
+    4. cleanToDos 를 만들어서 방금 지운 <li> 태그의 id가 없는 상태로 만들어주고
+    5. toDos = cleanToDos 와 saveToDos() 로 업데이트해준다.
+
+*/
 
 function deleteToDo(event) {
   const btn = event.target;
