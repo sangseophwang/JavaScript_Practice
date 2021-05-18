@@ -10,6 +10,11 @@ body {
   align-items: center;
 }
 
+.js-clock h1 {
+  margin: 0;
+  margin-top: 300px;
+}
+
 .form,
 .greetings {
   display: none;
@@ -23,6 +28,7 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 40px;
+  margin-top: -20px;
 }
 
 .js-toDoForm,
@@ -32,6 +38,13 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.js-weather {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
