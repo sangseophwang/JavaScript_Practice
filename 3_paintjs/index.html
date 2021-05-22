@@ -8,6 +8,72 @@
     <link rel="stylesheet" href="styles.css"
   </head>
   <body>
+    <canvas id="jsCanvas" aria-label="canvas" class="canvas"></canvas>
+    <div class="controls">
+      <div class="controls_range">
+        <input
+          type="range"
+          name="range"
+          id="jsRange"
+          min="0.1"
+          max="5"
+          value="2.5"
+          step="0.1"
+        />
+      </div>
+      <div class="controls_btns">
+        <button id="jsPaintMode">Fill</button>
+        <button id="jsSave">Save</button>
+      </div>
+
+      <div id="jsColors" class="controls_colors">
+        <div
+          class="controls_color"
+          aria-label="black"
+          style="background-color: #2c2c2c"
+        ></div>
+        <div
+          class="controls_color"
+          aria-label="white"
+          style="background-color: white"
+        ></div>
+        <div
+          class="controls_color"
+          aria-label="red"
+          style="background-color: #ff3b30"
+        ></div>
+        <div
+          class="controls_color"
+          aria-label="orange"
+          style="background-color: #ff9500"
+        ></div>
+        <div
+          class="controls_color"
+          aria-label="yellow"
+          style="background-color: #ffcc00"
+        ></div>
+        <div
+          class="controls_color"
+          aria-label="green"
+          style="background-color: #4cd963"
+        ></div>
+        <div
+          class="controls_color"
+          aria-label="lightblue"
+          style="background-color: #5ac8fa"
+        ></div>
+        <div
+          class="controls_color"
+          aria-label="blue"
+          style="background-color: #0579ff"
+        ></div>
+        <div
+          class="controls_color"
+          aria-label="purple"
+          style="background-color: #5856d6"
+        ></div>
+      </div>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>
