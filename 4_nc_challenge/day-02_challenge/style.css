@@ -1,0 +1,14 @@
+body {
+  font-family: sans-serif;
+  color: white;
+  background-color: #914eab;
+  width: 900px;
+}
+
+.long {
+  background-color: #eebc12;
+}
+
+.short {
+  background-color: #328cd4;
+}
