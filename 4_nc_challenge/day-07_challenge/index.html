@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+
+    <h1>Random Number Game</h1>
+
+    <div id="range" aria-label="Use the range and generate the number!">
+      <h3 id="generateNumber">Generate a number between 0 and 10</h3>
+      <input id="rangeNumber" type="range" min="10" max="200" value="10" step="1">
+    </div>
+
+    <form aria-label="Guess the number!">
+      <label for="number">
+        Guess the number:
+        <input id="textNumber" type="number" min="0" max="10" value="0"></text>
+        <input id="button" type="button" value="play!"></text>
+      </label>
+    </form>
+
+    <div aria-label="Selected number and Result!">
+      <span id="result"></span>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
