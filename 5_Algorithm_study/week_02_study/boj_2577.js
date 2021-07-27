@@ -15,17 +15,17 @@ for (let i = 0; i <= 9; i++) {
 
 count.forEach((e) => console.log(e));
 
-// let input = require("fs").readFileSync("test.txt").toString().split("\n");
-// let num = String(input[0] * input[1] * input[2]);
+let input = require("fs").readFileSync("test.txt").toString().split("\n");
+let num = String(input[0] * input[1] * input[2]);
 
-// for (let i = 0; i <= 9; i++) {
-//   let count = 0;
+for (let i = 0; i <= 9; i++) {
+  let count = 0;
 
-//   for (let j = 0; j < num.length; j++) {
-//     if (Number(num[j]) === i) {
-//       count++;
-//     }
-//   }
+  for (let j = 0; j < num.length; j++) {
+    if (Number(num[j]) === i) {
+      count++;
+    }
+  }
 
-//   console.log(count);
-// }
+  console.log(count);
+}
