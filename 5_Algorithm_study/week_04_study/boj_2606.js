@@ -6,7 +6,7 @@ const rl = readline.createInterface({
 // 코드 시작
 const solution = (input) => { 
   const n = +input.shift(); 
-  const m = +input.shift(); 
+  const bye = +input.shift(); 
   const graph = [...new Array(n + 1)].map(() => []); 
   const visited = [...new Array(n + 1)].fill(0); 
   let cnt = 0; 
@@ -26,7 +26,9 @@ const solution = (input) => {
       } } }; 
 
     dfs(1); 
-    console.log(cnt); }; 
+    console.log(cnt); 
+
+  }; 
 
     const input = []; 
     rl.on('line', function (line) {
@@ -36,3 +38,5 @@ const solution = (input) => {
       process.exit(); 
     });
 
+// 1. 먼저 input을 받는다.
+// 2. 
