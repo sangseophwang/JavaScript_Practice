@@ -1,42 +1,45 @@
-const readline = require('readline'); 
-const rl = readline.createInterface({ 
-  input: process.stdin, 
-  output: process.stdout, }); 
+// 바이러스
 
-// 코드 시작
-const solution = (input) => { 
-  const n = +input.shift(); 
-  const bye = +input.shift(); 
-  const graph = [...new Array(n + 1)].map(() => []); 
-  const visited = [...new Array(n + 1)].fill(0); 
-  let cnt = 0; 
+function dfs(v) {
+  count++;
+  visit[v] = true;
+  for (let i = 0; i < node[v].length; i++) {
+    if (visit[node[v][i]] === false) dfs(node[v][i]);
+  }
+}
+// ex) dfs(1)
+// [ false, true, false, false, false, false, false, false ]
+// for (let i = 0; i <node[1].length; i++) {
+//    if (visit[node[1][0]] === false) dfs(node[1][0])
+// }
+// 1 -> 2 -> 3 -> 2 -> 5 -> 6 -> 5 -> 끝
 
-  for (const edge of input) { 
-    const [start, destination] = edge.split(' ').map(e => +e); 
-    graph[start].push(destination); 
-    graph[destination].push(start); 
-  } 
-  visited[1] = 1; 
-  const dfs = (start) => { 
-    for (const destination of graph[start]) {
-      if (!visited[destination]) { 
-        visited[destination] = 1; 
-        cnt++; 
-        dfs(destination); 
-      } } }; 
+const input = require('fs')
+  .readFileSync('/dev/stdin')
+  .toString()
+  .trim()
+  .split('\n');
 
-    dfs(1); 
-    console.log(cnt); 
+const N = Number(input[0]);   // 7
+const C = Number(input[1]);   // 6
+const com = input.slice(2).map((e) => e.split(' ').map(Number));
+// [ [ 1, 2 ], [ 2, 3 ], [ 1, 5 ], [ 5, 2 ], [ 5, 6 ], [ 4, 7 ] ]
 
-  }; 
+const node = new Array(N + 1).fill(0).map(() => new Array());
+// [ [], [], [], [], [], [], [], [] ]
 
-    const input = []; 
-    rl.on('line', function (line) {
-      input.push(line); 
-    }).on('close', function () {
-      solution(input); 
-      process.exit(); 
-    });
+const visit = new Array(N + 1).fill(false);
+// [ false, false, false, false, false, false, false, false ]
 
-// 1. 먼저 input을 받는다.
-// 2. 
+for (let i = 0; i < com.length; i++) {
+  const [A, B] = com[i];
+  node[A].push(B);
+  node[B].push(A);
+  // [ [], [2, 5], [1, 3, 5], [2], [7], [1, 2, 6], [5], [4] ]
+}
+
+let count = 0;
+dfs(1);
+
+console.log(count - 1);
+// 1번 컴퓨터를 통해 걸리는 컴퓨터의 수니까 1을 빼준다.
