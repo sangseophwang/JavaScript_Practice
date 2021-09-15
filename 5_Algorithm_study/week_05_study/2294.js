@@ -19,7 +19,7 @@ rl.on("line", function (line) {
   let dp = Array(K + 1).fill(Infinity);
   dp[0] = 0;
 
-  for (let i = 0; i < coin.length; i++) {
+  for (let i = 0; i < N; i++) {
     for (let j = coin[i]; j <= K; j++) {
       dp[j] = Math.min(dp[j], dp[j - coin[i] + 1]);
     }
