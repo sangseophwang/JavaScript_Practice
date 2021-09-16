@@ -16,15 +16,17 @@ rl.on("line", function (line) {
     .map((e) => +e);
   const coin = input.map((e) => +e);
 
-  const dp = Array(K + 1).fill(Infinity);
-  dp[0] = 0;
+  const dp = Array(K + 1).fill(0);
+  dp[0] = 1;
 
-  for (let i = 0; i < N; i++) {
-    for (let j = coin[i]; j <= K; j++) {
-      dp[j] = Math.min(dp[j], dp[j - coin[i]] + 1);
+  for (i = 0; i < N; i++) {
+    // 동전 개수만큼 돌기
+    for (j = coin[i]; j <= K; j++) {
+      dp[j] += dp[j - coin[i]];
     }
   }
 
-  console.log(dp[K] === Infinity ? -1 : dp[K]);
+  console.log(dp[K]);
+
   process.exit();
 });
