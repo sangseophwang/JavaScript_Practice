@@ -1,4 +1,4 @@
-// 카드 합체 놀이 (실버 2 - 그리디, 우선순위 큐)
+// 동전 0 (실버 2 - 그리디)
 
 const readline = require("readline");
 
@@ -11,7 +11,7 @@ let input = [];
 
 rl.on("line", (line) => input.push(line)).on("close", () => {
   const [n, m] = input.shift().split(" ");
-  const num = Number(input[0].split(" "));
+  const num = input.map((e) => +e);
   console.log(num);
   process.exit();
 });
