@@ -29,3 +29,9 @@ rl.on("line", (line) => input.push(line)).on("close", () => {
   console.log(answer);
   process.exit();
 });
+
+/*
+해설
+먼저 회의실 시간을 정렬해야 하는데, 우선 끝나는 시간이 같으면 시작 시간 순으로 정렬하고, 아니면 끝나는 시간대로 정렬한다.
+그리고 end 변수를 만들어서 회의실 시간대의 끝 시간과 시작 시간을 비교해 answer에 하나씩 더해주고 end 변수 값을 바꿔준다.
+*/
