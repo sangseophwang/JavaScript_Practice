@@ -32,8 +32,11 @@ let input = [];
 
 rl.on("line", (line) => (input = line)).on("close", () => {
   const [n, k] = input.split(" ").map((e) => +e);
-  let queue = 0;
+  let queue = 1;
   let array = [...Array(n)].map((arr, i) => i + 1);
-  console.log(array);
+  for (let i = 0; i < n - 1; i++) {
+    if (queue <= n) {
+
+  }
   process.exit();
 });
