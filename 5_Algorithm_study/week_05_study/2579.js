@@ -11,7 +11,7 @@ rl.on("line", (line) => input.push(line)).on("close", () => {
   const n = Number(input.shift());
   const stairs = input.map((e) => +e);
   let dp = Array(301);
-  dp[0] = stairs[0]; // 10
+  dp[0] = stairs[0]; // 10  첫번째 칸 올라가는 경우
   dp[1] = Math.max(stairs[0] + stairs[1], stairs[1]); // 30
   dp[2] = Math.max(stairs[1] + stairs[2], stairs[0] + stairs[2]); // 35
 
