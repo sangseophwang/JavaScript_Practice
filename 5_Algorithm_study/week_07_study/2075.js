@@ -92,7 +92,7 @@ rl.on("line", function (line) {
     n = count;
     return;
   }
-  //삽입및 사제하는 구문
+  //삽입 및 사제하는 구문
   line.split(" ").forEach((value) => {
     min.add(parseInt(value));
     if (min.size() > n) min.poll();
