@@ -1,3 +1,5 @@
+//Programmers - 위장 (해시)
+
 function solution(clothes) {
   var answer = 1;
   var obj = {};
