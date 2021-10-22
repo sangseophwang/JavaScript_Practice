@@ -24,9 +24,9 @@ rl.on("line", (line) => input.push(line)).on("close", () => {
       continue;
     }
     if (h < array[i][1]) {
-      if (array[i][2] == 1) {
+      if (array[i][2] === 1) {
         answer++;
-      } else if (array[i][2] == 3) {
+      } else if (array[i][2] === 3) {
         stop = array[i][0];
         break;
       }
