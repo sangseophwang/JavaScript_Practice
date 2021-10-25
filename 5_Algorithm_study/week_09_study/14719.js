@@ -24,28 +24,21 @@ const rl = readline.createInterface({
 let input = [];
 
 rl.on("line", (line) => input.push(line)).on("close", () => {
-  const block = input[1].split(" ").map((e) => +e); // 3 1 2 3 4 1 1 2
-  const N = block.length; // 8
+  const block = input[1].split(" ").map((e) => +e);
+  const N = block.length;
   let answer = 0;
   for (let i = 1; i < N - 1; i++) {
     let left = 0;
     let right = 0;
     for (let j = 0; j < i; j++) {
-      left = Math.max(left, block[j]); // 3 3
-      console.log(`left:${left}`);
-      console.log(j);
+      left = Math.max(left, block[j]);
     }
-    console.log("-----");
     for (let j = N - 1; j > i; j--) {
-      right = Math.max(right, block[j]); // 4 4
-      console.log(`right:${right}`);
-      console.log(j);
+      right = Math.max(right, block[j]);
     }
-    console.log("-----");
     answer += Math.max(0, Math.min(left, right) - block[i]);
-    console.log(`${Math.min(left, right)} - ${block[i]} : ${answer}`);
   }
-  // console.log(answer);
+  console.log(answer);
 });
 
 /*
