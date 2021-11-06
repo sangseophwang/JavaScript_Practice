@@ -12,5 +12,4 @@ function solution(numbers) {
     ( '3', '30' => ('303')-('330'))
   3. join('') = 문자 합치기
   4. answer가 0으로만 구성돼있을 경우 0으로 출력, 아니면 answer 출력
-
 */
