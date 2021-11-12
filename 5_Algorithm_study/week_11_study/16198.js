@@ -19,5 +19,6 @@ rl.on("line", (line) => input.push(line)).on("close", () => {
       energy(rest, sum + temp[i - 1] * temp[i + 1]);
     }
   }
-  energy;
+  energy(weight, 0);
+  console.log(answer);
 });
