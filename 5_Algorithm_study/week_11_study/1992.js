@@ -18,9 +18,9 @@ rl.on("line", (line) => input.push(line)).on("close", () => {
     let right_bottom = QuadTree(divide, i + divide, j + divide);
     if (
       left_top.length === 1 &&
-      left_top == right_top &&
-      left_top == left_bottom &&
-      left_top == right_bottom
+      left_top === right_top &&
+      left_top === left_bottom &&
+      left_top === right_bottom
     )
       return left_top;
     else return "(" + left_top + right_top + left_bottom + right_bottom + ")";
