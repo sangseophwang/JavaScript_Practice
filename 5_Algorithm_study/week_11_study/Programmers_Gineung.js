@@ -9,16 +9,16 @@ function solution(progresses, speeds) {
         progresses[i] += speeds[i];
       }
     }
-    let deploy_count = 0;
+    let count = 0;
     while (progresses[0] >= 100) {
       // 100이넘으면 shift, 다음 기능이 100이 되어도 shift
       progresses.shift();
       speeds.shift();
-      deploy_count++;
+      count++;
     }
-    if (deploy_count > 0) {
+    if (count > 0) {
       // 결과 배열에 넣어주기
-      answer.push(deploy_count);
+      answer.push(count);
     }
   }
   return answer;
