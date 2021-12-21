@@ -7,4 +7,8 @@ app.get("/", (req, res) => {
   res.render("index", { text: "World!" });
 });
 
-app.listen(3001);
+const userRouter = require("./routes/users");
+
+app.use("/users", userRouter);
+
+app.listen(3002);
