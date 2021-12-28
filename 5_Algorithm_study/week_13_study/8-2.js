@@ -15,5 +15,5 @@ rl.on("line", (line) => input.push(line)).on("close", () => {
     }
   }
   DFS(N);
-  console.log(array.join(""));
+  console.log(Number(array.join("")));
 });
